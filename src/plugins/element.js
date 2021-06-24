@@ -2,22 +2,15 @@ import Vue from 'vue'
 import {
   Button, Form, FormItem, Input, Message, Container, Header, Aside, Main, Footer, Menu, Submenu, MenuItem, Dialog, Radio,
   InputNumber, Cascader, Breadcrumb, BreadcrumbItem, Card, Row, Col, Table, TableColumn, Switch, Tooltip, Pagination,
-  Tabs, TabPane, Divider, Carousel, CarouselItem, MessageBox, Select, Option, Badge, Popconfirm, Upload,
-  // Notification,
-  // Dropdown,
-  // DropdownMenu,
-  // DropdownItem,
-  // RadioGroup,
-  // RadioButton,
-  // Loading,
-  // DatePicker,
+  Tabs, TabPane, Divider, Carousel, CarouselItem, MessageBox, Select, Option, Badge, Popconfirm, Upload, Drawer,
   Autocomplete,
   Link,
-  Progress
-  // Avatar
+  Progress,
+  Rate
+
 } from 'element-ui'
 // Vue.use(Loading)
-// Vue.use(DatePicker)
+Vue.use(Rate)
 Vue.use(Progress)
 Vue.use(Autocomplete)
 // Vue.use(Notification)
@@ -26,7 +19,7 @@ Vue.use(Autocomplete)
 // Vue.use(DropdownItem)
 // Vue.use(RadioGroup)
 // Vue.use(RadioButton)
-// Vue.use(Avatar)
+Vue.use(Drawer)
 Vue.use(Link)
 Vue.use(Upload)
 Vue.use(Popconfirm)

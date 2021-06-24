@@ -2,6 +2,7 @@
   <div class="app">
     <Header></Header>
     <img :src="imgSrc" width="100%" alt=""/>
+    <div class="home_title">百万工作，任你挑选</div>
     <!-- 搜索职位 -->
     <div >
       <div style="display: flex;justify-content: center">
@@ -342,6 +343,17 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.home_title{
+  position: absolute;
+  top: 250px;
+  left: 32%;
+  font-size: 80px;
+  font-weight: 700;//字体加粗
+  font-family: STHupo;
+  background: linear-gradient(0.25turn, #2D5ACC, #A5BDFA);
+  -webkit-background-clip: text;
+  color: transparent;
+}
 .app {
   width: 100%;
   text-align: center;

@@ -38,7 +38,7 @@
             style="font-size: 25px"
             list-type="picture"
            >
-            <i class="el-icon-camera" style="font-size: 50px;color: deepskyblue"></i>
+            <i class="el-icon-camera" style="font-size: 50px;color: #4971CB"></i>
             上传新头像
           </el-upload>
         </div>
@@ -57,7 +57,7 @@
       <el-menu :default-active="activeIndex"
                mode="horizontal"
                @select="handleSelect"
-               text-color="deepskyblue"
+               text-color="#4971CB"
                active-text-color="deepskyblue"
                router
                      background-color="#DAECFE">
@@ -125,12 +125,12 @@ export default {
 }
 .position_content{
   margin-top: 10px;
-  color: deepskyblue;
+  color: #4971CB;
   font-size: 20px;
 }
 .username_content{
   margin-top: 20px;
-  color: deepskyblue;
+  color: #4971CB;
   font-size: 25px;
 }
 .center_content{
@@ -140,7 +140,7 @@ export default {
 }
 .upload_info{
   margin-top: 20px;
-  color: deepskyblue;
+  color: #4971CB;
 }
 .upload_content{
   margin-top: 20px;
@@ -151,11 +151,11 @@ export default {
   margin-top: 100px;
   height: 130px;
   width: 130px;
-  border: 1px solid deepskyblue;
+  border: 1px solid #4971CB;
   border-radius: 50%;
   padding: 10px;
-  box-shadow: 0 0 10px deepskyblue;
-  background-color: deepskyblue;
+  box-shadow: 0 0 10px #4971CB;
+  background-color: #4971CB;
   img {
     width: 100%;
     height: 100%;
@@ -166,7 +166,7 @@ export default {
 .title_content{
   margin-left: 230px;
   font-size: 40px;
-  color: deepskyblue;
+  color: #4971CB;
   display:flex;
   justify-content: flex-start;
 }
@@ -176,7 +176,7 @@ export default {
 .all_content{
   position: absolute;
   width: 100%;
-  background: url("../../assets/login_background.png");
+  background: url("../../assets/login_background2.png");
   background-size: 100% 100%;
   height: 100%;
 }

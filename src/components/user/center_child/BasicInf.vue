@@ -1,52 +1,96 @@
 <template>
   <div>
-    <el-form ref="formRef" :model="form"  :rules="FormRules">
+    <el-form ref="formRef" :model="form" :rules="FormRules">
       <!--用户名-->
-      <el-form-item prop="username">
-        <i class="el-icon-user" style="font-size: 35px"></i>
-        用户名：
-        <el-input v-model="form.username" style="width: 40%;" :disabled="form.flag"></el-input>
-      </el-form-item>
+      <el-row :gutter="10">
+        <el-col :span="6">
+          <i class="el-icon-user" style="font-size: 35px"></i>
+          <span class="text_select">用户名</span>
+        </el-col>
+        <el-col :span="18">
+          <el-form-item prop="username">
+            <el-input v-model="form.username" style="width: 40%;" :disabled="form.flag"></el-input>
+          </el-form-item>
+        </el-col>
+      </el-row>
       <!--  性别-->
-      <el-form-item>
-        <el-form-item >
-          <i :class=iconStyle style="font-size: 35px"></i>
-          性别：
-          <el-radio v-model="form.radio" label="1" @change="sexChanged()">男</el-radio>
-          <el-radio v-model="form.radio" label="2" @change="sexChanged()">女</el-radio>
+      <el-row :gutter="10">
+        <el-form-item>
+          <el-col :span="6">
+            <i :class=iconStyle style="font-size: 35px"></i>
+            <span class="text_select">性别</span>
+          </el-col>
+          <el-col :span="18">
+            <el-form-item>
+              <el-radio v-model="form.radio" label="1" @change="sexChanged()" style=" margin-left: 20px;"><a
+                style="font-size: 20px;">男</a></el-radio>
+              <el-radio v-model="form.radio" label="2" @change="sexChanged()"><a style="font-size: 20px">女</a>
+              </el-radio>
+            </el-form-item>
+          </el-col>
         </el-form-item>
-      </el-form-item>
+      </el-row>
       <!--  年龄-->
-      <el-form-item>
-        <i class="el-icon-potato-strips" style="font-size: 35px"></i>
-        年龄：
-        <el-input-number v-model="form.num"  :min="12" :max="99" ></el-input-number>
-      </el-form-item>
+      <el-row :gutter="10">
+        <el-col :span="6">
+          <i class="el-icon-potato-strips" style="font-size: 35px"></i>
+          <span class="text_select">年龄</span>
+        </el-col>
+        <el-col :span="18">
+          <el-form-item>
+            <el-input-number v-model="form.num" :min="12" :max="99"></el-input-number>
+          </el-form-item>
+        </el-col>
+      </el-row>
       <!-- 联系电话-->
-      <el-form-item>
-        <i class="el-icon-phone-outline" style="font-size: 35px"></i>
-        联系电话：
-        <el-input v-model="form.tele" style=" width: 40%;" :disabled="form.flag"></el-input>
-      </el-form-item>
+      <el-row :gutter="10">
+        <el-col :span="6">
+          <i class="el-icon-phone-outline" style="font-size: 35px"></i>
+          <span class="text_select">联系电话</span>
+        </el-col>
+        <el-col :span="18">
+          <el-form-item>
+            <el-input v-model="form.tele" style=" width: 40%;" :disabled="form.flag"></el-input>
+          </el-form-item>
+        </el-col>
+      </el-row>
       <!--  联系邮箱-->
-      <el-form-item prop="mail">
-        <i class="el-icon-message" style="font-size: 35px"></i>
-        邮箱：
-        <el-input v-model="form.mail" style="width: 40%;" :disabled="form.flag"></el-input>
-      </el-form-item>
+      <el-row :gutter="10">
+        <el-col :span="6">
+          <i class="el-icon-message" style="font-size: 35px"></i>
+          <span class="text_select">邮箱</span>
+        </el-col>
+        <el-col :span="18">
+          <el-form-item prop="mail">
+            <el-input v-model="form.mail" style="width: 40%;" :disabled="form.flag"></el-input>
+          </el-form-item>
+        </el-col>
+      </el-row>
       <!--  居住地-->
+      <el-row :gutter="10">
+        <el-col :span="6">
+          <i class="el-icon-map-location" style="font-size: 35px"></i>
+          <span class="text_select">居住地</span>
+        </el-col>
+        <el-col :span="18">
       <el-form-item>
-        <i class="el-icon-map-location" style="font-size: 35px"></i>
-        居住地：
         <el-input v-model="form.location" style="width: 40%;" :disabled="form.flag"></el-input>
         <!-- 选择城市地区 -->
       </el-form-item>
+        </el-col>
+      </el-row>
       <!--  职位意向-->
+      <el-row :gutter="10">
+        <el-col :span="6">
+          <i class="el-icon-star-off" style="font-size: 35px"></i>
+          <span class="text_select">求职意向</span>
+        </el-col>
+        <el-col :span="18">
       <el-form-item>
-        <i class="el-icon-star-off" style="font-size: 35px"></i>
-        求职意向：
         <el-input v-model="form.wish" style="width: 40%;" :disabled="form.flag"></el-input>
       </el-form-item>
+        </el-col>
+      </el-row>
       <el-form-item style="margin-left: 230px">
         <el-button type="primary" @click="save">保存修改</el-button>
       </el-form-item>
@@ -113,6 +157,13 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.text_select {
+  font-size: 18px;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #606266;
+}
+
 .el-icon-edit-outline {
   position: relative;
   top: 10px;

@@ -69,19 +69,19 @@
     <!--    内容主体区域-->
     <el-form :model="addForm" :rules="addFormRules" ref="addFormRef" label-width="70px" >
       <!-- 用户名 -->
-      <el-form-item  label="用户名" prop="username">
+      <el-form-item  label="用户名" prop="username" label-width="100px">
         <el-input v-model="addForm.username" prefix-icon="el-icon-user-solid"  clearable></el-input>
       </el-form-item>
       <!--  密码    -->
-      <el-form-item label="密码" prop="password">
+      <el-form-item label="密码" prop="password" label-width="100px">
         <el-input v-model="addForm.password" prefix-icon="el-icon-lock" type="password"  clearable></el-input>
       </el-form-item>
       <!-- 确认密码 -->
-      <el-form-item label="确认密码" prop="checkPassword">
+      <el-form-item label="确认密码" prop="checkPassword" label-width="100px">
         <el-input v-model="addForm.checkPassword" prefix-icon="el-icon-lock" type="password"  clearable></el-input>
       </el-form-item>
       <!-- 邮箱 -->
-      <el-form-item label="邮箱" prop="email">
+      <el-form-item label="邮箱" prop="email" label-width="100px">
         <el-input v-model="addForm.email" prefix-icon="el-icon-message" type="email"  clearable></el-input>
       </el-form-item>
     </el-form>
@@ -100,22 +100,22 @@
     <!--    内容主体区域-->
     <el-form :model="editForm" :rules="editFormRules" ref="editFormRef" label-width="70px" >
       <!-- 用户名 -->
-      <el-form-item  label="用户名" >
-        <el-input v-model="editForm.username" prefix-icon="el-icon-user-solid"  disabled></el-input>
+      <el-form-item  label="用户名"  label-width="100px">
+        <el-input v-model="editForm.username"  prefix-icon="el-icon-user-solid"  disabled ></el-input>
       </el-form-item>
       <!-- 邮箱 -->
-      <el-form-item label="邮箱" prop="mail">
+      <el-form-item label="邮箱" prop="mail" label-width="100px">
         <el-input v-model="editForm.mail" prefix-icon="el-icon-message"  clearable></el-input>
       </el-form-item>
       <!--  居住地    -->
-      <el-form-item label="居住地" prop="location">
+      <el-form-item label="居住地" prop="location" label-width="100px">
         <el-input v-model="editForm.location" prefix-icon="el-icon-location-outline"   clearable></el-input>
       </el-form-item>
       <!--  求职意愿    -->
-      <el-form-item label="意向" prop="wish">
+      <el-form-item label="意向" prop="wish" label-width="100px">
         <el-input v-model="editForm.wish" prefix-icon="el-icon-star-off"   clearable></el-input>
       </el-form-item>
-      <el-form-item label="角色" >
+      <el-form-item label="角色"  label-width="100px">
         <el-select v-model="editForm.role" >
           <el-option
             v-for="item in options"
