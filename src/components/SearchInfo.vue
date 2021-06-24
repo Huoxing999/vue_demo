@@ -21,7 +21,6 @@
     <!-- 列表 -->
     <el-divider></el-divider>
     <div class="list"  v-for="item in list" :key="item.id">
-      <!-- <el-row> -->
       <el-col :span="24">
         <router-link target="_blank" :to="{path:'/SearchDetail',query:{id: item.id}}">
           <div class="list_card">
@@ -47,11 +46,22 @@
             </el-col>
           </div>
         </router-link>
+        <div style="width: 100%; height: 20px;"></div>
+        <!-- 分页 -->
+      <div class="block">
+      <el-pagination
+          @size-change="handleSizeChange"
+          @current-change="handleCurrentChange"
+          :current-page.sync="currentPage3"
+          :page-size="100"
+          layout="prev, pager, next, jumper"
+          :total="1000">
+        </el-pagination>
+      </div>
       </el-col>
         <div class="banner"><img :src="Src1" alt="" class="banner_img1"/></div>
         <div><img :src="Src3" alt="" class="banner_img2"/></div>
         <div><img :src="Src2" alt="" class="banner_img3"/></div>
-        <div></div>
     </div>
     <Footer style="margin: 0"></Footer>
   </div>
@@ -156,10 +166,18 @@ export default {
       ],
       Src1: 'https://static.zhipin.com/zhipin-geek/v434/web/geek/images/pro-3.jpg',
       Src2: require('../assets/pro-22.png'),
-      Src3: require('../assets/pro-11.png')
+      Src3: require('../assets/pro-11.png'),
+      currentPage3: 5
     }
   },
   methods: {
+    handleSizeChange (val) {
+      console.log(`每页${val}条`)
+    },
+    handleCurrentChange (val) {
+      console.log(`当前页:${val}`)
+    }
+
   },
   mounted () {
     this.defult_job = this.$route.searchJob.inputValue
@@ -185,13 +203,14 @@ export default {
 }
 .list{
   width: 100%;
-  height: 90%;
+  height: 80%;
 }
 .list_card{
   margin-top: 15px;
   width: 60%;
   height: 120px;
   margin-left: 10%;
+  margin-bottom: 10px;
 }
 .card_left{
 }
@@ -231,5 +250,11 @@ export default {
   margin-top: 420px;
   position: absolute;
   right: 110px;
+}
+.block{
+  margin-top: 40px;
+  position: absolute;
+  top: 970px;
+  right: 550px;
 }
 </style>

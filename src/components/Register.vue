@@ -39,7 +39,6 @@
 </template>
 
 <script>
-import Home from '@/components/Home'
 export default {
   data () {
     const validatePass = (rule, value, callback) => {
@@ -103,11 +102,6 @@ export default {
   methods: {
     login () {
       this.$router.push('/home')
-      // Home1.methods.login()
-      // Home1.home_z_index = 'z-index: -1'
-      // Home1.isShowLogin = 'display: inline'
-      console.log(Home.home_z_index)
-      console.log(Home.isShowLogin)
       this.$message.success('注册成功')
     },
 

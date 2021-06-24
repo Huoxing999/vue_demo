@@ -53,14 +53,14 @@
       <!--    内容主体区域-->
       <el-form :model="editForm" :rules="editFormRules" ref="editFormRef" label-width="70px">
         <!-- 用户名 -->
-        <el-form-item label="用户名">
-          <el-input v-model="editForm.username" prefix-icon="el-icon-user-solid" disabled></el-input>
+        <el-form-item label="用户名" label-width="100px">
+          <el-input v-model="editForm.username" prefix-icon="el-icon-user-solid" ></el-input>
         </el-form-item>
         <!--        &lt;!&ndash; 邮箱 &ndash;&gt;-->
         <!--        <el-form-item label="邮箱" prop="mail">-->
         <!--          <el-input v-model="editForm.mail" prefix-icon="el-icon-message"  clearable></el-input>-->
         <!--        </el-form-item>-->
-        <el-form-item label="角色">
+        <el-form-item label="角色" label-width="100px">
           <el-select v-model="editForm.role" disabled>
             <el-option
               v-for="item in options"
@@ -71,11 +71,11 @@
           </el-select>
         </el-form-item>
         <!--  反馈消息    -->
-        <el-form-item label="消息" prop="message">
+        <el-form-item label="消息" prop="message" label-width="100px">
           <el-input v-model="editForm.message" prefix-icon="el-icon-chat-line-round" clearable></el-input>
         </el-form-item>
         <!--  反馈消息    -->
-        <el-form-item label="反馈时间" prop="time">
+        <el-form-item label="反馈时间" prop="time" label-width="100px">
           <el-input v-model="editForm.time" prefix-icon="el-icon-watch" disabled></el-input>
         </el-form-item>
       </el-form>

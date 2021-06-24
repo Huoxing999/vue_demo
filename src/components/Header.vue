@@ -9,7 +9,7 @@
             <el-menu :default-active="activeIndex" mode="horizontal"
                      background-color="#DAECFE"
                      router>
-                <el-menu-item index="1" width="100px" @click="ToHome">首页</el-menu-item>
+                <el-menu-item index="/home" width="100px" @click="changeActive('/home')" >首页</el-menu-item>
                 <el-submenu index="2">
                     <template slot="title">招聘信息</template>
                     <el-menu-item index="2-1" @click="skip('https://mp.weixin.qq.com/s/Agc6nxkQkaXyjFnsz1f3sw')">行业速递</el-menu-item>
@@ -22,7 +22,7 @@
                      <img :src="WechatImgSrc" alt="" style="width: 50px; height: 50px; padding-left: 10px;"/>
                      <img :src="WeiboImgSrc" alt="" style="width: 50px; height: 50px; padding-left: 10px;"/>
                 </el-submenu>
-                <el-menu-item index="/center" >我的</el-menu-item>
+                <el-menu-item index="/center" @click="changeActive('/center')">我的</el-menu-item>
             </el-menu>
         </div>
         <img :src="headImgSrc" @click="login" alt="" style="width: 50px; height: 50px; position: absolute; right: 40px; top: 20px;"/>
@@ -72,7 +72,7 @@ export default {
       QQImgSrc: require('../assets/QQ.png'),
       WechatImgSrc: require('../assets/Wechat.png'),
       WeiboImgSrc: require('../assets/Weibo.png'),
-      activeIndex: '1',
+      activeIndex: '/home',
       // 控制login对话框的显示与隐藏
       loginDialogVisible: false,
       loginForm: {
@@ -94,14 +94,21 @@ export default {
       }
     }
   },
-
+  created () {
+    this.activeIndex = window.sessionStorage.getItem('activeIndex')
+  },
   methods: {
+    // 保存活跃标签
+    changeActive (index) {
+      console.log(index)
+      console.log(this.activeIndex)
+      window.sessionStorage.setItem('activeIndex', index)
+      this.activeIndex = index
+      console.log(this.activeIndex)
+    },
     // 点击重置按钮，重置表单
     resetLoginForm () {
       this.$refs.loginFormRef.resetFields()
-    },
-    ToHome () {
-      this.$router.push('/home')
     },
     skip (url) {
       location.href = url

@@ -15,7 +15,29 @@
           </el-col>
           <el-col :span="12">
             <div style="margin-top: 80px; margin-left: 320px;">
-              <div><el-button type="primary" plain round style="font-size: 18px; margin-bottom: 40px; margin-left: 5px;">五险一金</el-button></div>
+              <div><el-button type="primary" plain round style="font-size: 18px; margin-bottom: 40px; margin-left: 2px;">五险一金</el-button>
+               <el-button type="warning" plain round style="font-size: 18px; margin-bottom: 40px; margin-left: 15px;" @click="drawer = true">用户反馈</el-button></div>
+                  <!-- 用户反馈模块 抽屉弹出 -->
+                  <el-drawer
+                    title="我是标题"
+                    :visible.sync="drawer"
+                    :with-header="false">
+                    <!-- 反馈内容 -->
+                    <el-form :model="ruleForm" ref="ruleForm" label-width="100px" class="demo-ruleForm">
+                       <!-- 评分内容 -->
+                      <el-form-item label="反馈内容">
+                        <el-rate v-model="value" show-text style="margin-top: 12px;"></el-rate>
+                      </el-form-item>
+                      <!-- 表格 -->
+                      <el-form-item label="反馈内容" prop="content">
+                        <el-input v-model.number="ruleForm.content" type="textarea" :rows="5"></el-input>
+                      </el-form-item>
+                      <el-form-item>
+                        <el-button type="primary" @click="submitForm('ruleForm')">提交</el-button>
+                        <el-button @click="resetForm('ruleForm')">重置</el-button>
+                      </el-form-item>
+                    </el-form>
+                  </el-drawer>
               <div><i class="el-icon-document-checked" style="color: #409EFF; letter-spacing: 2px; font-size: 17px;">填写在线简历</i></div>
             </div>
           </el-col>
@@ -86,7 +108,10 @@ export default {
   },
   data () {
     return {
-      // similarSrc: require("../assets/similar.png"),
+      drawer: false,
+      direction: 'rtl',
+      content: '',
+      value: null, // 评分
       DetailInfo: [
         {
           post_name: 'VUE前端开发',
@@ -143,10 +168,37 @@ export default {
           rec_company: '华勤技术股份有限公司',
           rec_city: '南昌'
         }
-      ]
+      ],
+      ruleForm: {
+        content: ''
+      }
     }
   },
   methods: {
+    // // 抽屉开关
+    // handleClose (done) {
+    //   this.$confirm('确认关闭？')
+    //     .then(_ => {
+    //       done()
+    //     })
+    //     .catch(_ => {})
+    // },
+    // 提交反馈
+    submitForm (formName) {
+      this.$refs[formName].validate((valid) => {
+        if (valid) {
+          alert('submit!')
+        } else {
+          console.log('error submit!!')
+          return false
+        }
+      })
+    },
+    // 重置
+    resetForm () {
+      const that = this
+      that.ruleForm.content = null
+    }
   }
 }
 </script>
@@ -181,5 +233,10 @@ export default {
 }
 .recommend a:hover{
   color: #00d7c6;
+}
+.demo-ruleForm{
+  width: 100%;
+  margin-top: 50px;
+  padding-right: 30px;
 }
 </style>
