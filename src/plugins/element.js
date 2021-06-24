@@ -13,8 +13,8 @@ import {
   // DatePicker,
   Autocomplete,
   Link,
-  Progress
-  // Avatar
+  Progress,
+  Avatar
 } from 'element-ui'
 // Vue.use(Loading)
 // Vue.use(DatePicker)
@@ -26,7 +26,7 @@ Vue.use(Autocomplete)
 // Vue.use(DropdownItem)
 // Vue.use(RadioGroup)
 // Vue.use(RadioButton)
-// Vue.use(Avatar)
+Vue.use(Avatar)
 Vue.use(Link)
 Vue.use(Upload)
 Vue.use(Popconfirm)
