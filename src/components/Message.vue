@@ -4,7 +4,7 @@
     <el-breadcrumb separator-class="el-icon-arrow-right">
       <el-breadcrumb-item :to="{ path: '/index' }">首页</el-breadcrumb-item>
       <el-breadcrumb-item>消息提醒</el-breadcrumb-item>
-      <el-breadcrumb-item>用户xxx反馈</el-breadcrumb-item>
+      <el-breadcrumb-item>用户反馈</el-breadcrumb-item>
     </el-breadcrumb>
     <!--  卡片视图区域-->
     <el-card>
