@@ -4,7 +4,7 @@
   <!--标题区域-->
   <div class="title_content">
     <img style="height: 120px;width: 120px" alt="" src='../../assets/safe.png'/>
-    <div class="title_info">个人信息</div>
+    <div class="title_info">个人信息1231</div>
   </div>
   <el-container>
     <el-aside width="50%" >
